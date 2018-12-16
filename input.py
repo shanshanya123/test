@@ -1,11 +1,11 @@
 #接收输入信息
 print ("How old are you?")
 # 接收控制台的输入信息
-age = raw_input()
+age = input()
 print ("How tall are you?")
-height = raw_input()
+height = input()
 print("How much do you weight?"),
-weight = raw_input()
+weight = input()
 
 print ("So,you're %r old, %r tall and %r heavy." %(
     age, height, weight))
