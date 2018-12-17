@@ -14,22 +14,10 @@ print ("So,you're %r old, %r tall and %r heavy." %(
 
 
 
-
-from sys import argv
-
-script, filename = argv
-
-txt = open(filename)
-
-print ("Here's your file %r:" % filename)
-print (txt.read())
-# txt.close()#处理完文件后将他关闭
-# print txt.read()#测试是否关闭了
-
-
-print("Type the  filename again:")
-file_again = input("> ")
-
-txt_again = open(file_again)
-
-print (txt_again.read())
+# 读取文件
+file_object = open('C:/Users/WWH/Desktop/1.txt','r')
+try:
+     all_the_text = file_object.read( )
+finally:
+     file_object.close( )
+print(all_the_text)
