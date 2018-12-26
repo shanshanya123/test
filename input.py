@@ -9,8 +9,7 @@ weight = input()
 
 print ("So,you're %r old, %r tall and %r heavy." %(
     age, height, weight))	
-# 1.raw_input()是接受控制台输入的任何信息
-# 2.在print后面加“,”可以让输入在同一
+
 
 
 
