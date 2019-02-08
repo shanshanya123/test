@@ -51,5 +51,36 @@ class Heap:
 			self.maxHeapify(0)
 			return me
 		return None
+def heapSort(self):
+		size = self.currsize
+		while self.currsize-1 >= 0:
+			temp = self.h[0]
+			self.h[0] = self.h[self.currsize-1]
+			self.h[self.currsize-1] = temp
+			self.currsize -= 1
+			self.maxHeapify(0)
+		self.currsize = size
 
+	def insert(self,data):
+		self.h.append(data)
+		curr = self.currsize
+		self.currsize+=1
+		while self.h[curr] > self.h[curr/2]:
+			temp = self.h[curr/2]
+			self.h[curr/2] = self.h[curr]
+			self.h[curr] = temp
+			curr = curr/2
+
+	def display(self):
+		print(self.h)
+
+def main():
+	l = list(map(int, raw_input().split()))
+	h = Heap()
+	h.buildHeap(l)
+	h.heapSort()
+	h.display()
+
+if __name__=='__main__':
+	main()
 	
