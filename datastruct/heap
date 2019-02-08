@@ -18,3 +18,38 @@ class Heap:
 			if 2*i+2 < self.currsize:
 			return 2*i+2
 		return None
+		from __future__ import print_function, division
+
+	def maxHeapify(self,node):
+		if node < self.currsize:
+			m = node
+			lc = self.leftChild(node)
+			rc = self.rightChild(node)
+			if lc is not None and self.h[lc] > self.h[m]:
+				m = lc
+			if rc is not None and self.h[rc] > self.h[m]:
+				m = rc
+			if m!=node:
+				temp = self.h[node]
+				self.h[node] = self.h[m]
+				self.h[m] = temp
+				self.maxHeapify(m)
+
+	def buildHeap(self,a):
+		self.currsize = len(a)
+		self.h = list(a)
+		for i in range(self.currsize//2,-1,-1):
+			self.maxHeapify(i)
+
+	def getMax(self):
+		if self.currsize >= 1:
+			me = self.h[0]
+			temp = self.h[0]
+			self.h[0] = self.h[self.currsize-1]
+			self.h[self.currsize-1] = temp
+			self.currsize -= 1
+			self.maxHeapify(0)
+			return me
+		return None
+
+	
