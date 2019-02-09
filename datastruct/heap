@@ -41,25 +41,6 @@ class Heap:
 		for i in range(self.currsize//2,-1,-1):
 			self.maxHeapify(i)
 
-	def getMax(self):
-		if self.currsize >= 1:
-			me = self.h[0]
-			temp = self.h[0]
-			self.h[0] = self.h[self.currsize-1]
-			self.h[self.currsize-1] = temp
-			self.currsize -= 1
-			self.maxHeapify(0)
-			return me
-		return None
-def heapSort(self):
-		size = self.currsize
-		while self.currsize-1 >= 0:
-			temp = self.h[0]
-			self.h[0] = self.h[self.currsize-1]
-			self.h[self.currsize-1] = temp
-			self.currsize -= 1
-			self.maxHeapify(0)
-		self.currsize = size
 
 
 	
